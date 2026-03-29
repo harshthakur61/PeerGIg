@@ -2,8 +2,9 @@ services:
   - type: web
     name: peergig-backend
     env: node
-    buildCommand: npm install && cd server && npm install && npm rebuild
-    startCommand: npm run server
+    rootDir: server # Tell Render the code is in the server folder
+    buildCommand: npm install && npm rebuild
+    startCommand: npm start
     envVars:
       - key: NODE_ENV
         value: production
