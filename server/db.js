@@ -1,8 +1,7 @@
 const Database = require("better-sqlite3")
 const path = require("path")
 
-const isProd = process.env.NODE_ENV === "production"
-const dbPath = isProd ? "/var/data/peergig.db" : path.join(__dirname, "peergig.db")
+const dbPath = path.join(__dirname, "peergig.db")
 const db = new Database(dbPath)
 
 db.pragma("foreign_keys = ON")
@@ -83,5 +82,38 @@ CREATE TABLE IF NOT EXISTS notifications (
   FOREIGN KEY (user_id) REFERENCES users(id)
 );
 `)
+
+// Handle initial seeding for empty database (important for ephemeral Free Tier)
+const row = db.prepare("SELECT count(*) as count FROM users").get()
+if (row && row.count === 0) {
+  console.log("Database empty. Seeding initial data...")
+  const bcrypt = require("bcryptjs")
+  
+  // Create Demo Users
+  const userInsert = db.prepare(
+    "INSERT INTO users (name, email, password_hash, role, college, bio, wallet_balance) VALUES (?, ?, ?, ?, ?, ?, ?)"
+  )
+  const users = [
+    ["Arjun Sharma", "learner@demo.com", bcrypt.hashSync("demo123", 10), "both", "IIT Bombay", "Curious learner across subjects", 100],
+    ["Priya Mehta", "tutor@demo.com", bcrypt.hashSync("demo123", 10), "tutor", "BITS Pilani", "I teach with concept-first clarity", 100]
+  ]
+  for (const user of users) {
+    userInsert.run(...user)
+  }
+
+  // Create Demo Gigs
+  const tutor = db.prepare("SELECT * FROM users WHERE email = 'tutor@demo.com'").get()
+  const gigInsert = db.prepare(
+    "INSERT INTO gigs (tutor_id, title, subject, description, price, duration_minutes, difficulty, tags, avg_rating, total_reviews) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)"
+  )
+  const gigs = [
+    ["Quadratic Equations", "Mathematics", "Focused session on Math.", 49, 45, "Beginner", "math,concept", 4.8, 5],
+    ["Newton's Laws", "Physics", "Physics fundamentals.", 59, 45, "Beginner", "physics,laws", 4.7, 3]
+  ]
+  for (const gig of gigs) {
+    gigInsert.run(tutor.id, ...gig)
+  }
+  console.log("Seeding complete.")
+}
 
 module.exports = db

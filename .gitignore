@@ -1,0 +1,8 @@
+node_modules/
+.env
+dist/
+*.local
+peergig.db
+peergig.db-journal
+/client/node_modules/
+/server/node_modules/

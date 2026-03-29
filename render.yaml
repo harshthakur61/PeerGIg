@@ -2,14 +2,12 @@ services:
   - type: web
     name: peergig-backend
     env: node
-    buildCommand: npm install && cd server && npm install
+    buildCommand: npm install && cd server && npm install && npm rebuild
     startCommand: npm run server
     envVars:
       - key: NODE_ENV
         value: production
       - key: PORT
         value: 10000
-    disk:
-      name: peergig-db-disk
-      mountPath: /var/data
-      sizeGB: 1
+      - key: CLIENT_URL
+        value: https://peergig.vercel.app # REPLACE WITH YOUR VERCEL URL
