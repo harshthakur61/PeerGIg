@@ -9,7 +9,7 @@ const roleData = {
   learner: {
     label: "🎓 Learner",
     title: "No concept should stay",
-    accent: "unclear tonight.",
+    accent: "unclear.",
     sub: "Get instant 1:1 help from trusted student tutors. Learn faster with topic-wise sessions, clear examples, and affordable pricing.",
     ctaPrimary: "Find a Tutor",
     ctaSecondary: "How It Works →",
