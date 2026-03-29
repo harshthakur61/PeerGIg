@@ -1,0 +1,12 @@
+<svg width="420" height="120" viewBox="0 0 420 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect x="6" y="6" width="108" height="108" rx="28" fill="#6C63FF"/>
+  <circle cx="44" cy="50" r="14" fill="white"/>
+  <path d="M28 80C28 69 35 62 44 62C53 62 60 69 60 80V86H28V80Z" fill="white"/>
+  <circle cx="76" cy="52" r="14" fill="#FF6B81"/>
+  <path d="M60 82C60 71 67 64 76 64C85 64 92 71 92 82V88H60V82Z" fill="#FF6B81"/>
+  <path d="M48 24L60 16L72 24" stroke="white" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M60 17V27" stroke="white" stroke-width="6" stroke-linecap="round"/>
+  <text x="136" y="58" fill="white" font-family="Inter, sans-serif" font-size="56" font-weight="600">Peer</text>
+  <text x="251" y="58" fill="#8A7CFF" font-family="Inter, sans-serif" font-size="56" font-weight="700">Gig</text>
+  <text x="136" y="96" fill="#8A7CFF" font-family="Inter, sans-serif" font-size="23" letter-spacing="7">PEER TUTORING</text>
+</svg>

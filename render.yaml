@@ -1,0 +1,15 @@
+services:
+  - type: web
+    name: peergig-backend
+    env: node
+    buildCommand: npm install && cd server && npm install
+    startCommand: npm run server
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: PORT
+        value: 10000
+    disk:
+      name: peergig-db-disk
+      mountPath: /var/data
+      sizeGB: 1

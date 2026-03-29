@@ -1,0 +1,115 @@
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=DM+Sans:wght@300;400;500;700&display=swap");
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  font-family: "DM Sans", sans-serif;
+  background: #1A1208;
+  color: #FDF6EC;
+}
+
+h1,
+h2,
+h3 {
+  font-family: "Playfair Display", serif;
+}
+
+.bg-white {
+  background-color: #2B1D11 !important;
+}
+
+.bg-slate-50 {
+  background-color: #1A1208 !important;
+}
+
+.bg-slate-100 {
+  background-color: #3A2818 !important;
+}
+
+.text-slate-900 {
+  color: #FDF6EC !important;
+}
+
+.text-slate-800 {
+  color: #FDF6EC !important;
+}
+
+.text-slate-700 {
+  color: #D9CAB7 !important;
+}
+
+.text-slate-600 {
+  color: #CDBDA8 !important;
+}
+
+.text-slate-500 {
+  color: #A89880 !important;
+}
+
+.border,
+.border-b,
+.border-t {
+  border-color: #4B3725 !important;
+}
+
+input,
+select,
+textarea {
+  background-color: #2A1B0E !important;
+  border-color: #4B3725 !important;
+  color: #FDF6EC !important;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+  outline: none;
+  border-color: #E8621A !important;
+  box-shadow: 0 0 0 2px rgba(232, 98, 26, 0.28);
+}
+
+button,
+a {
+  transition: all 0.2s ease;
+}
+
+.bg-primary {
+  background-color: #E8621A !important;
+}
+
+.bg-primary:hover {
+  background-color: #F9874A !important;
+}
+
+.bg-secondary {
+  background-color: #C9963B !important;
+}
+
+.bg-secondary:hover {
+  background-color: #D7A94A !important;
+}
+
+.bg-indigo-100,
+.bg-pink-100,
+.bg-amber-100,
+.bg-emerald-100,
+.bg-rose-100,
+.bg-sky-100 {
+  background-color: rgba(232, 98, 26, 0.18) !important;
+}
+
+.text-indigo-700,
+.text-pink-700,
+.text-amber-700,
+.text-emerald-700,
+.text-rose-700,
+.text-sky-700 {
+  color: #F7BB8A !important;
+}
+
+.shadow-sm,
+.shadow-md,
+.shadow-lg {
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.18) !important;
+}
